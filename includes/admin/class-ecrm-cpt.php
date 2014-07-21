@@ -38,7 +38,7 @@
 	            'all_items'          => __( 'All Contacts', 'ecrm' ),
 	            'search_items'       => __( 'Search Contacts', 'ecrm' ),
 	            'parent_item_colon'  => __( 'Parent Contacts:', 'ecrm' ),
-	            'not_found'          => __( 'No conttacts found.', 'ecrm' ),
+	            'not_found'          => __( 'No contacts found.', 'ecrm' ),
 	            'not_found_in_trash' => __( 'No contacts found in Trash.', 'ecrm' ),
 	        ),
 	         
