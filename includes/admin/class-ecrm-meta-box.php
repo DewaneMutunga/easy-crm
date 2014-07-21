@@ -39,6 +39,9 @@
 		
 		$email = get_post_meta( $post->ID, '_contact_email', true );
 		
+		// Add a nonce field so we can check for it later.
+	    wp_nonce_field(' save_contact', 'contacts_nonce' );
+    
 	    // Output label and field
 	    echo ('<label for="contact_email">' . __( 'Email Address', 'ecrm' ) . '</label>' );
 	    echo ('<input type="text" name="contact_email" id="contact_email" value="'. esc_attr( $email ) . '" />' );  
@@ -50,7 +53,17 @@
 	* @param int $post_id Post ID
 	*/
 	public function save_meta_boxes( $post_id ) {
+	 	
+	 	// Check if our nonce is set.
+	    if ( ! isset( $_POST['contacts_nonce'] ) ) {
+	        return $post_id;    
+	    }
 	 
+	    // Verify that the nonce is valid.
+	    if ( ! wp_verify_nonce( $_POST['contacts_nonce'], 'save_contact' ) ) {
+	        return $post_id;
+	    }
+	    
 	    // Check this is the Contact Custom Post Type
 	    if ( 'contact' != $_POST['post_type'] ) {
 	        return $post_id;
