@@ -47,7 +47,8 @@ class EasyCRM {
 	 * @since 1.0.0
 	 */
 	private function includes() {
-		require_once( ECRM_DIR . 'includes/admin/class-ecrm-cpt.php' );		// custom post type class
+		require_once( ECRM_DIR . 'includes/admin/class-ecrm-cpt.php' );				// custom post type class
+		require_once( ECRM_DIR . 'includes/admin/class-ecrm-meta-box.php' );		// meta box class
 	}
      
 }
