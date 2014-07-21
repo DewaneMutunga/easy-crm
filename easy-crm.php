@@ -35,7 +35,7 @@ class EasyCRM {
 		define( 'ECRM_URL', trailingslashit( plugin_dir_url( __FILE__ ) ) );
 
 		// load text domain
-		add_action( 'init', array( $this, 'load_textdomain' ) );
+		//add_action( 'init', array( $this, 'load_textdomain' ) );
 		
 		// require additional plugin files
 		$this->includes();
