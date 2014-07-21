@@ -2,16 +2,7 @@
 /**
  * ECRM_CPT class
  *
- * This class is responsible for creating the new taxonomy and its
- * corresponding options and settings.
- *
- * The taxonomy includes the typical Name, Slug, and Description fields
- * but also adds a new field called "Post Listing Title" to the add/edit
- * screens.
- *
- * Posts can be assigned to the taxonomy from both the manage posts
- * screen and the edit post screens themselves. Posts can only be assigned
- * to one term.
+ * This class is responsible for creating the custom post type.
  *
  * @since 1.0.0
  */
@@ -20,15 +11,16 @@
  
  class ECRM_CPT {
 	 
-	 /**
+	/**
 	 * constructor for ECRM_CPT class
 	 */
 	 public function __construct() {
-	 
-		 add_action( 'init', array( $this, 'register_custom_post_type' ) );
+	 	
+	 	// load new custom post type
+		add_action( 'init', array( $this, 'register_custom_post_type' ) );
 	 }
 	 
-	 /**
+	/**
 	 * Registers a Custom Post Type called contact
 	 */
 	public function register_custom_post_type() {
@@ -69,5 +61,5 @@
 	        ),
 	    )); 
 	}
- }
- new ECRM_CPT();
+}
+$ECRM_CPT = new ECRM_CPT();
