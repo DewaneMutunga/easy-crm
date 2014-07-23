@@ -37,8 +37,21 @@ class EasyCRM {
 		// load text domain
 		//add_action( 'init', array( $this, 'load_textdomain' ) );
 		
+		// load admin scripts and styles
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_assets' ) );
+		
 		// require additional plugin files
 		$this->includes();
+	}
+	
+	/** 
+	 * enqueue *back-end* scripts and styles
+	 */
+	public function admin_assets() {
+		
+		// admin page CSS
+		wp_register_style( 'ecrm_admin_style', ECRM_URL . 'assets/css/admin-style.css' );
+		wp_enqueue_style( 'ecrm_admin_style' );
 	}
 	
     /**

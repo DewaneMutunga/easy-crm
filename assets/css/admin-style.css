@@ -1,0 +1,8 @@
+/* admin styles */
+
+#contact_email,
+#contact_phone_number,
+#contact_location {
+	display: inherit;
+	margin: 5px 0 5px 0;
+}
