@@ -62,4 +62,4 @@
 	    )); 
 	}
 }
-$ECRM_CPT = new ECRM_CPT();
+new ECRM_CPT();

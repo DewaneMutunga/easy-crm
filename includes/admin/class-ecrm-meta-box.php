@@ -66,4 +66,4 @@
 	    update_post_meta( $post_id, '_contact_email', $email );  
 	}
  }
-$ECRM_META_BOX = new ECRM_META_BOX();
+new ECRM_META_BOX();

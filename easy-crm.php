@@ -52,4 +52,4 @@ class EasyCRM {
 	}
      
 }
-$EasyCRM = new EasyCRM;
+new EasyCRM;
