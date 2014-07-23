@@ -38,10 +38,20 @@
 	public function output_meta_box( $post ) {
 		
 		$email = get_post_meta( $post->ID, '_contact_email', true );
+		$phone_number = get_post_meta( $post->ID, 'contact_phone_number', true );
+		$location = get_post_meta( $post->ID, 'contact_location', true );
     
-	    // Output label and field
+	    // Output email label and field
 	    echo ('<label for="contact_email">' . __( 'Email Address', 'ecrm' ) . '</label>' );
-	    echo ('<input type="text" name="contact_email" id="contact_email" value="'. esc_attr( $email ) . '" />' );  
+	    echo ('<input type="text" name="contact_email" id="contact_email" value="'. esc_attr( $email ) . '" />' );
+	    
+	    // Output phone number label and field
+	    echo ('<label for="contact_phone_number">' . __( 'Phone Number', 'ecrm' ) . '</label>' );
+	    echo ('<input type="text" name="contact_phone_number" id="contact_phone_number" value="'. esc_attr( $phone_number ) . '" />' );
+	    
+	    // Output location label and field
+	    echo ('<label for="contact_location">' . __( 'Location', 'ecrm' ) . '</label>' );
+	    echo ('<input type="text" name="contact_location" id="contact_location" value="'. esc_attr( $location ) . '" />' );  
 	}
 	
    /**
@@ -64,6 +74,14 @@
 	    // OK to save meta data
 	    $email = sanitize_text_field( $_POST['contact_email'] );
 	    update_post_meta( $post_id, '_contact_email', $email );  
+	    
+	    // OK to save meta data
+	    $phone_number = sanitize_text_field( $_POST['contact_phone_number'] );
+	    update_post_meta( $post_id, 'contact_phone_number', $phone_number );
+	    
+	    // OK to save meta data
+	    $location = sanitize_text_field( $_POST['contact_location'] );
+	    update_post_meta( $post_id, 'contact_location', $location );
 	}
  }
 new ECRM_META_BOX();
