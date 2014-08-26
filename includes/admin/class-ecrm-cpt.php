@@ -1,18 +1,18 @@
 <?php
 /**
- * ECRM_CPT class
+ * EasyCRM_CPT class
  *
  * This class is responsible for creating the custom post type.
  *
  * @since 1.0.0
  */
  
- if ( ! defined( 'ABSPATH' ) ) exit; // no accessing this file directly
+if ( ! defined( 'ABSPATH' ) ) exit; // no accessing this file directly
  
- class ECRM_CPT {
-	 
+class EasyCRM_CPT {
+ 
 	/**
-	 * constructor for ECRM_CPT class
+	 * constructor for EasyCRM_CPT class
 	 */
 	 public function __construct() {
 	 	
@@ -62,4 +62,4 @@
 	    )); 
 	}
 }
-new ECRM_CPT();
+new EasyCRM_CPT();
